@@ -1,0 +1,20 @@
+#cabecera {
+  background-image: url(img/hero-bg.jpeg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+#imgBodyNav {
+  width: 150px;
+}
+
+@media (min-width: 1200px) {
+  #nav {
+    background-color: black;
+    height: 100vh;
+  }
+  #nav .btn-close {
+    display: none;
+  }
+}
