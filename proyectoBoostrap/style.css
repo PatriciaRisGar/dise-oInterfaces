@@ -4,57 +4,57 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Raleway", sans-serif;
+	font-family: "Raleway", sans-serif;
 }
 
 h1 {
-  font-size: 3em !important;
-  font-weight: bold !important;
+	font-size: 3em !important;
+	font-weight: bold !important;
 }
 .customUnderline {
-  text-decoration: underline;
-  text-decoration-color: #149ddd;
-  text-decoration-thickness: 3px;
+	text-decoration: underline;
+	text-decoration-color: #149ddd;
+	text-decoration-thickness: 3px;
 }
 
 h2 {
-  color: #173b6c;
-  text-decoration: underline;
-  text-decoration-color: #149ddd;
-  text-decoration-thickness: 3px;
+	color: #173b6c;
+	text-decoration: underline;
+	text-decoration-color: #149ddd;
+	text-decoration-thickness: 3px;
 }
 
 h3 {
-  color: #173b6c;
+	color: #173b6c;
 }
 
 h4 {
-  font-size: 1em !important;
-  font-weight: bold !important;
+	font-size: 1em !important;
+	font-weight: bold !important;
 }
 
 h5 {
-  background-color: #c3e8fa;
-  width: 90px;
-  font-size: 0.8em !important;
-  font-weight: bold !important;
-  text-align: center;
+	background-color: #c3e8fa;
+	width: 90px;
+	font-size: 0.8em !important;
+	font-weight: bold !important;
+	text-align: center;
 }
 
 h6 {
-  font-size: 1em !important;
-  font-weight: bold !important;
+	font-size: 1em !important;
+	font-weight: bold !important;
 }
 
 body {
-  color: #272829;
-  font-family: "Sans-serif", sans-serif;
+	color: #272829;
+	font-family: "Sans-serif", sans-serif;
 }
 
 #imgBodyNav {
-  background-color: #212431;
-  border-color: #212431;
-  border-width: 0.5vh;
+	background-color: #212431;
+	border-color: #212431;
+	border-width: 0.5vh;
 }
 
 .bi-linkedin,
@@ -62,17 +62,17 @@ body {
 .bi-instagram,
 .bi-facebook,
 .bi-twitter {
-  color: white;
-  background-color: #212431;
-  border-color: #212431;
-  border-width: 0.5vh;
+	color: white;
+	background-color: #212431;
+	border-color: #212431;
+	border-width: 0.5vh;
 }
 
 .bi-geo-alt,
 .bi-phone,
 .envelope2 {
-  color: #149ddd;
-  background-color: #dff3fc;
+	color: #149ddd;
+	background-color: #dff3fc;
 }
 
 .bi-briefcase,
@@ -81,52 +81,52 @@ body {
 .bi-binoculars,
 .bi-brightness-high,
 .bi-calendar-week {
-  background-color: #149ddd;
-  color: #dff3fc;
+	background-color: #149ddd;
+	color: #dff3fc;
 }
 
 #numFacts {
-  color: #212431;
-  font-size: 2.5em;
-  font-weight: bold;
+	color: #212431;
+	font-size: 2.5em;
+	font-weight: bold;
 }
 
 #cabecera {
-  background-image: url(img/hero-bg.jpeg);
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
+	background-image: url(img/hero-bg.jpeg);
+	background-size: cover;
+	background-position: center;
+	height: 100vh;
 }
 
 #imgBodyNav {
-  width: 150px;
+	width: 150px;
 }
 nav li :hover {
-  color: #149ddd;
+	color: #149ddd;
 }
 
 .nav {
-  background-color: #050d18 !important;
+	background-color: #050d18 !important;
 }
 
 @media (min-width: 1200px) {
-  #nav {
-    background-color: #050d18;
-    height: 100vh;
-  }
-  #nav .btn-close {
-    display: none;
-  }
+	#nav {
+		background-color: #050d18;
+		height: 100vh;
+	}
+	#nav .btn-close {
+		display: none;
+	}
 }
 
 .customColicons {
-  height: 50px;
+	height: 50px;
 }
 
 .customBorder {
-  border-left: 2px solid #050d18;
+	border-left: 2px solid #050d18;
 }
 
 a {
-  text-decoration: none;
+	text-decoration: none;
 }

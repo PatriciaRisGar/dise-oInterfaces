@@ -1,0 +1,110 @@
+/*
+#A {
+  background-color: #20d684;
+  width: 200px;
+  height: 200px;
+  transition: background-color 5s, color 10s, width 10s, height 10s;
+}
+
+#B {
+  background-color: #00a0d6;
+  width: 200px;
+  height: 200px;
+  transition: all 10s;
+}
+
+#C {
+  background-color: #00a0d6;
+  -webkit-transition: background-color 0.4s;
+  -moz-transition: background-color 0.4s;
+  -ms-transition: background-color 0.4s;
+  -o-transition: background-color 0.4s;
+  width: 200px;
+  height: 200px;
+  transition: all 10s;
+}
+#C:hover {
+  background-color: #3c1f80;
+  width: 300px;
+  height: 300px;
+  color: white;
+}
+#D {
+  background-color: #00a0d6;
+  width: 200px;
+  height: 200px;
+  transition: all 5s;
+  position: absolute;
+  overflow: hidden;
+}
+
+.content {
+  position: relative;
+}
+.top {
+  top: 0;
+}
+.bottom {
+  top: 200px;
+}
+
+#D:hover .top {
+  top: -200px;
+}
+#D:hover .bottom {
+  top: 0px;
+  float: left;
+  padding-left: 20px;
+}
+
+.modal {
+  margin-left: 205px;
+  font-size: 30px;
+  visibility: visible;
+  opacity: 1;
+}
+.modal:hover {
+  visibility: hidden;
+  opacity: 0;
+}
+
+#zindexA {
+  margin-top: 40px;
+  background-color: #20d684;
+  width: 100px;
+  height: 100px;
+  transition: background-color 5s, color 10s, width 10s, height 10s;
+}
+
+#zindexB {
+  margin-top: 20px;
+  background-color: #463cae;
+  width: 200px;
+  height: 200px;
+  transition: background-color 5s, color 10s, width 10s, height 10s;
+}
+
+#zindexB:hover {
+  z-index: -1;
+}
+
+rotate
+#ajustes {
+	width: 30%;
+	transition: all 10s linear;
+}
+
+#ajustes:hover {
+	transform: rotate(5turn);
+	width: 100%;
+}
+*/
+
+Escalado #transform {
+	width: 30%;
+	transition: transform 5s;
+}
+
+#transform:hover {
+	transform: translateX(300px);
+}
