@@ -5,7 +5,9 @@ import React, {useState, useEffect} from 'react';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 
-function LlamadaAPI({buscar}) {
+import Button from '@mui/material/Button';
+
+function LlamadaAPI({buscar, characterInfo, open}) {
 	const [characters, setCharacters] = useState([]);
 
 	useEffect(() => {
@@ -17,6 +19,14 @@ function LlamadaAPI({buscar}) {
 		datos();
 	}, []);
 
+	// AlertDialogSlide
+
+	const handleClickOpen = (character) => {
+		console.log(character);
+		characterInfo(character);
+		open(true);
+	};
+
 	if (buscar === '') {
 		return (
 			<div>
@@ -25,12 +35,14 @@ function LlamadaAPI({buscar}) {
 					{characters.map((character) => (
 						<li key={character.id}>
 							<h2>{character.name}</h2>
-							<p>{character.description}</p>
 							<ImageList variant='masonry' cols={3} gap={8}>
 								<ImageListItem>
 									<img src={`${character.thumbnail.path}.${character.thumbnail.extension}`} alt={character.name} loading='lazy' />
 								</ImageListItem>
 							</ImageList>
+							<Button variant='outlined' onClick={(event) => handleClickOpen(character)}>
+								Saber mas
+							</Button>
 						</li>
 					))}
 				</ul>
@@ -38,12 +50,13 @@ function LlamadaAPI({buscar}) {
 		);
 	}
 	console.log(buscar);
+
 	return (
 		<div>
 			<h1>Personajes encontrados</h1>
 			<ul>
 				{characters.map((character) =>
-					character.name.toLowerCase().includes(buscar) ? (
+					character.name.toLowerCase().includes(buscar.toLowerCase()) ? (
 						<li key={character.id}>
 							<h2>{character.name}</h2>
 							<p>{character.description}</p>
