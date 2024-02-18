@@ -15,10 +15,6 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 });
 
 export default function Personajes() {
-	const containerStyle = {
-		backgroundColor: 'white', // Fondo blanco
-		padding: '20px', // Ajusta el relleno según sea necesario
-	};
 	const [buscar, setBuscar] = useState('');
 	const [open, setOpen] = React.useState(false);
 	const [characterInfo, setCharacterInfo] = useState([]);
@@ -26,19 +22,22 @@ export default function Personajes() {
 	const handleClose = () => {
 		setOpen(false);
 	};
+	console.log(characterInfo);
 
 	return (
-		<div style={containerStyle}>
+		<div>
 			<NavBar buscar={buscar} onBuscadorChange={setBuscar} />
 			<LlamadaAPI buscar={buscar} characterInfo={setCharacterInfo} open={setOpen} />
 			<Dialog open={open} TransitionComponent={Transition} keepMounted onClose={handleClose} aria-describedby='alert-dialog-slide-description'>
 				<DialogTitle>{characterInfo.name}</DialogTitle>
 				<DialogContent>
-					<DialogContentText id='alert-dialog-slide-description'>{characterInfo.description}</DialogContentText>
+					<DialogContentText id='alert-dialog-slide-description'>
+						<p>ID: {characterInfo.id}</p>
+						<p>Descripción: {characterInfo.description}</p>
+					</DialogContentText>
 				</DialogContent>
 				<DialogActions>
-					<Button onClick={handleClose}>Disagree</Button>
-					<Button onClick={handleClose}>Agree</Button>
+					<Button onClick={handleClose}>Cerrar</Button>
 				</DialogActions>
 			</Dialog>
 		</div>

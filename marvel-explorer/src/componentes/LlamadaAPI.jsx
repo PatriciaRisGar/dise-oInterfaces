@@ -1,56 +1,51 @@
-//El hash es calculado con md5 (timestamp + key privada + key publica)
-// http://gateway.marvel.com/v1/public/characters?ts=1000&apikey=c3e33fa73373fe9fe7539b0ef460a146&hash=a5e19f1edb7daec9b30a72be31ef35d5
-
 import React, {useState, useEffect} from 'react';
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
-
-import Button from '@mui/material/Button';
+import {ImageList, ImageListItem, Button, Typography, Box} from '@mui/material';
 
 function LlamadaAPI({buscar, characterInfo, open}) {
 	const [characters, setCharacters] = useState([]);
 
 	useEffect(() => {
-		const datos = async () => {
+		const fetchData = async () => {
 			const response = await fetch('http://gateway.marvel.com/v1/public/characters?ts=1000&apikey=c3e33fa73373fe9fe7539b0ef460a146&hash=a5e19f1edb7daec9b30a72be31ef35d5');
 			const data = await response.json();
 			setCharacters(data.data.results);
 		};
-		datos();
+		fetchData();
 	}, []);
 
-	// AlertDialogSlide
-
 	const handleClickOpen = (character) => {
-		console.log(character);
 		characterInfo(character);
 		open(true);
 	};
-
 	if (buscar === '') {
 		return (
 			<div>
-				<h1>Todos los personajes</h1>
-				<ul>
-					{characters.map((character) => (
-						<li key={character.id}>
-							<h2>{character.name}</h2>
-							<ImageList variant='masonry' cols={3} gap={8}>
-								<ImageListItem>
+				{characters.length > 0 ? (
+					<div>
+						<Typography variant='h4' sx={{mb: 10}}>Todos los personajes</Typography>
+						<ImageList variant='woven' cols={3}>
+							{characters.map((character) => (
+								<ImageListItem key={character.id}>
 									<img src={`${character.thumbnail.path}.${character.thumbnail.extension}`} alt={character.name} loading='lazy' />
+									<Box sx={{bgcolor: 'rgba(0, 0, 0, 0.5)', p: 1, position: 'absolute', bottom: 0, left: 0, right: 0}}>
+										<Typography variant='subtitle1' sx={{color: 'white', fontWeight: 'bold'}}>
+											{character.name}
+										</Typography>
+										<Button variant='outlined' onClick={() => handleClickOpen(character)} sx={{mt: 1}}>
+											Saber más
+										</Button>
+									</Box>
 								</ImageListItem>
-							</ImageList>
-							<Button variant='outlined' onClick={(event) => handleClickOpen(character)}>
-								Saber mas
-							</Button>
-						</li>
-					))}
-				</ul>
+							))}
+						</ImageList>
+					</div>
+				) : (
+					<Typography variant='h4'>Cargando...</Typography>
+				)}
 			</div>
 		);
 	}
 	console.log(buscar);
-
 	return (
 		<div>
 			<h1>Personajes encontrados</h1>
