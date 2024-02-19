@@ -22,18 +22,19 @@ export default function Personajes() {
 	const handleClose = () => {
 		setOpen(false);
 	};
-	console.log(characterInfo);
-
+	const onBuscarPersonaje = (busqueda) => {
+		setBuscar(busqueda);
+	};
 	return (
 		<div>
-			<NavBar buscar={buscar} onBuscadorChange={setBuscar} />
+			<NavBar onBuscarPersonaje={onBuscarPersonaje} />
 			<LlamadaAPI buscar={buscar} characterInfo={setCharacterInfo} open={setOpen} />
 			<Dialog open={open} TransitionComponent={Transition} keepMounted onClose={handleClose} aria-describedby='alert-dialog-slide-description'>
 				<DialogTitle>{characterInfo.name}</DialogTitle>
 				<DialogContent>
 					<DialogContentText id='alert-dialog-slide-description'>
-						<p>ID: {characterInfo.id}</p>
-						<p>Descripción: {characterInfo.description}</p>
+						ID: {characterInfo.id}
+						{characterInfo.description ? <p>Descripción: {characterInfo.description}</p> : <p>No hay descripción disponible.</p>}
 					</DialogContentText>
 				</DialogContent>
 				<DialogActions>

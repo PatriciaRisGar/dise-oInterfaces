@@ -1,14 +1,21 @@
 import * as React from 'react';
-import {Box, TextField} from '@mui/material';
+import {Box, TextField, Button} from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
+import {useState} from 'react';
+import '../App.css';
 
-export default function NavBar({buscar, onBuscadorChange}) {
+export default function NavBar({onBuscarPersonaje}) {
+	const [valor, setValor] = useState('');
+	const handleChange = (event) => {
+		setValor(event.target.value);
+	};
+
 	return (
-		<Box sx={{'& > :not(style)': {mb: 15}}}>
-			<Box sx={{display: 'flex', alignItems: 'flex-end'}}>
-				<SearchIcon sx={{color: 'action.active', mt: 10, mr: 1.5, ml: 100}} />
-				<TextField id='input-with-sx' value={buscar} onChange={(event) => onBuscadorChange(event.target.value)} label='Buscar personaje' variant='standard' />
-			</Box>
+		<Box className='nav-container'>
+			<TextField id='input-with-sx' onChange={handleChange} label='Buscar' variant='standard' className='estiloTextField' />
+			<Button onClick={() => onBuscarPersonaje(valor)} variant='contained'>
+				<SearchIcon/>
+			</Button>
 		</Box>
 	);
 }

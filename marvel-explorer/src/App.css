@@ -1,8 +1,59 @@
-.app-background {
+body {
 	background-size: cover;
 	background-attachment: fixed;
 	background-position: center;
-	background-image: url('./media/comics.jpg');
-	margin: 0;
-	height: 100%;
+	background-image: url('./media/marvel.jpg');
+}
+
+h3 {
+	font-family: 'Helvetica Neue';
+	color: #ed1d24;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: bold;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	text-align: center;
+}
+
+.white-text {
+	color: white;
+	font-weight: bold;
+}
+.character-item {
+	margin: 10em;
+}
+
+.estiloCargandoComics {
+	font-family: 'Helvetica Neue';
+	color: #ed1d24;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: bold;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	margin-top: 50em;
+	text-align: center;
+}
+
+.nav-container {
+	margin-top: 10em;
+	margin-bottom: 26em;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.estiloTextField {
+	background-color: aliceblue;
+	margin-right: 10px;
+}
+
+.paginacion-container {
+	background-color: #e72023;
+	padding: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.paginacion-container .MuiPaginationItem-root {
+	color: white;
 }
