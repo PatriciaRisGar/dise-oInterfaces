@@ -5,6 +5,9 @@ import Comics from './componentes/Comics.jsx';
 import React from 'react';
 import {Button} from '@mui/material';
 
+
+// eventos onClicks que muesta un componente u otro en función de lo clicado.
+
 function App() {
 	const [cambiarComicsYPersonajes, setCambiarComicsYPersonajes] = React.useState('mostrarPersonajes');
 	

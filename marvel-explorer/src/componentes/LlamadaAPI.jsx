@@ -2,6 +2,9 @@ import React, {useState, useEffect} from 'react';
 import {ImageList, ImageListItem, Button, Typography, Box, Pagination} from '@mui/material';
 import '../App.css';
 
+//hace la llamada a la api de todos los characteres con paginacion y renderiza.
+// También contiene la promesa para la búsqueda de un personaje en la API completa y lo renderiza.
+
 function LlamadaAPI({buscar, characterInfo, open}) {
 	const [characters, setCharacters] = useState([]);
 	const [totalPaginas, setTotalPaginas] = useState([]);
@@ -36,11 +39,11 @@ function LlamadaAPI({buscar, characterInfo, open}) {
 			<div>
 				{characters.length > 0 ? (
 					<div>
-						<ImageList variant='woven' cols={3}>
+						<ImageList sx={{width: 1150}} cols={3}>
 							{characters.map((character) => (
-								<ImageListItem key={character.id}>
+								<ImageListItem key={character.id} sx={{height: 300}}>
 									<img src={`${character.thumbnail.path}.${character.thumbnail.extension}`} alt={character.name} loading='lazy' />
-									<Box sx={{bgcolor: 'rgba(0, 0, 0, 0.5)', p: 1, position: 'absolute', bottom: 0, left: 0, right: 0}}>
+									<Box sx={{bgcolor: 'rgba(0, 0, 0, 0.8)', p: 1, position: 'absolute', bottom: 0, left: 0, right: 0}}>
 										<Typography variant='subtitle1' sx={{color: 'white', fontWeight: 'bold'}}>
 											{character.name}
 										</Typography>
@@ -65,7 +68,7 @@ function LlamadaAPI({buscar, characterInfo, open}) {
 			<ul>
 				{characters.map((character) =>
 					character.name.toLowerCase().includes(buscar.toLowerCase()) ? (
-						<li key={character.id} className="character-item">
+						<li key={character.id} className='character-item'>
 							<h2 className='white-text'>{character.name}</h2>
 							<p className='white-text'>{character.description}</p>
 							<ImageList variant='masonry' cols={3} gap={8}>
